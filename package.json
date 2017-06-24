@@ -1,0 +1,38 @@
+{
+  "name": "lqip",
+  "version": "0.1.0",
+  "description": "Low Quality Image Placeholders (LQIP) Module for Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zouhir/lqip.git"
+  },
+  "keywords": [
+    "lqip",
+    "cli",
+    "node",
+    "nodecli",
+    "images",
+    "blur",
+    "blurry",
+    "webpack"
+  ],
+  "author": "Zouhir Chahoud",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zouhir/lqip/issues"
+  },
+  "homepage": "https://github.com/zouhir/lqip#readme",
+  "dependencies": {
+    "sharp": "^0.18.1"
+  },
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "chai-as-promised": "^7.0.0",
+    "mocha": "^3.4.2",
+    "mock-fs": "^4.4.1"
+  }
+}
