@@ -1,7 +1,7 @@
 const chai = require('chai');
 const mockFiles = require('mock-fs');
 const chaiAsPromised = require("chai-as-promised");
-const lqip = require('../index');
+const lqip = require('../index');n
 
 chai.use(chaiAsPromised);
 const expect = chai.expect;
