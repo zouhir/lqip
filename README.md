@@ -3,7 +3,9 @@
 </p>
 
 <h4 align="center">LQIP: Low Quality Images Placeholder</h4>
-<a align="center" href="https://lqip-loader.firebaseapp.com/">demo</a>
+<p align="center">
+  <a align="center" href="https://lqip-loader.firebaseapp.com/">demo</a>
+</p>
 
 <br />
 <br />
