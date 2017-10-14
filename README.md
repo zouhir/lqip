@@ -3,21 +3,21 @@
 </p>
 
 <h4 align="center">LQIP: Low Quality Images Placeholder</h4>
+<p align="center">[demo](https://lqip-loader.firebaseapp.com/)</p>
 
-#### Demos
-
-- [lqip static site demo](https://lqip-loader.firebaseapp.com/)
-- Your demo goes here! 😻
-
+<br />
+<br />
 <p>
-<img src="https://raw.githubusercontent.com/zouhir/lqip/master/_github/installation.png" width="100%">
+  <img src="https://raw.githubusercontent.com/zouhir/lqip/master/_github/installation.png" width="100%">
 </p>
 
 ```
 npm install --save lqip
 ```
+
+<br />
 <p>
-<img src="https://raw.githubusercontent.com/zouhir/lqip/master/_github/example.png" width="100%" />
+  <img src="https://raw.githubusercontent.com/zouhir/lqip/master/_github/example.png" width="100%" />
 </p>
 
 Generating Base64 from an image:
@@ -46,8 +46,10 @@ lqip.palette(file).then(res => {
 });
 
 ```
-
-#### API Docs
+<br />
+<p>
+  <img src="https://raw.githubusercontent.com/zouhir/lqip/master/_github/api.png" width="100%" />
+</p>
 
 ##### `lqip.base64(filePath: string)`
 
@@ -59,16 +61,29 @@ image string with a valid format and ready to be used in web applications such a
 This method accepts an image file path, and returns an colour palette as an array of HEX colour values. The array that is returned
 is sorted from the most to the least dominant colour.  
 
-#### Inspired By:
+<br />
+<p>
+  <img src="https://raw.githubusercontent.com/zouhir/lqip/master/_github/inspo.png" width="100%" />
+</p>
+
 - [Medium web app](https://medium.com/cucumbertown-magazine/the-beginners-guide-to-composition-in-food-photography-how-to-transform-your-food-photos-from-good-39613ab78bf2)
 - [Instagram native mobile app](https://www.instagram.com/)
 - [Polymer shop project](https://shop.polymer-project.org/)
 
-#### Remarkable Mentions:
+<br />
+<p>
+  <img src="https://github.com/zouhir/lqip/blob/master/_github/mentions.png" width="100%" />
+</p>
+
 - Essential Image Optimization, An eBook by Addy Osmany [link](https://images.guide/)
 
-#### Related Projects:
-- [lqip-loader for Webpack](https://github.com/zouhir/lqip-loader)
+<br />
+<p>
+  <img src="https://raw.githubusercontent.com/zouhir/lqip/master/_github/creds.png" width="100%" />
+</p>
 
-#### License
+Related projects to this would be [lqip-loader for webpack](https://github.com/zouhir/lqip-loader) as well as [lqip-cli](https://github.com/zouhir/lqip-cli).
+
+Thanks to [Colin van Eengine](https://twitter.com/cvaneenige) for his reviewing and early testing.
+
 MIT - [Zouhir Chahoud](https://zouhir.org/)
