@@ -2,7 +2,6 @@ const path = require("path");
 const sharp = require("sharp");
 const { version } = require("./package.json");
 const Vibrant = require("node-vibrant");
-var sortBy = require("lodash.sortby");
 
 const ERROR_EXT = `Error: Input file is missing or of an unsupported image format lqip v${version}`;
 
@@ -34,17 +33,29 @@ const toBase64 = (extension, data) => {
  * @param swatch
  * @returns {{palette: Array}}
  */
-const toPalette = swatch => {
+const toPalette = swatch => (
   // get an array with relevant information
   // out of swatch object
+  Object.keys(swatch).map(key => ({
+    popularity: swatch[key].getPopulation(),
+    hex: swatch[key].getHex()
+  }))
+  // discard falsy values
+  .filter(Boolean)
+  // sort by least to most popular color
+  .sort((a, b) => a.popularity <= b.popularity)
+  .map(color => color.hex)
+)
+
+const toPalette = swatch => {
+
   let palette = Object.keys(swatch).map(key => {
     return {
       popularity: swatch[key].getPopulation(),
       hex: swatch[key].getHex()
     };
   });
-  // sort by least to most popular color
-  // sortBy docs: https://lodash.com/docs/4.17.4#sortBy
+
   palette = sortBy(palette, ["popularity"]);
   // we done with the popularity attribute
   // remove it with map & reverse the order
