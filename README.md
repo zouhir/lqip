@@ -1,10 +1,6 @@
-<h1 align="center">
-  <img src="https://lqip-loader.firebaseapp.com/media/logo.png" width="200">
-    <br />
-    LQIP For Node
-    <br />
-    <br />
-</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zouhir/lqip/master/_github/logo.png" width="508">
+</p>
 
 <h4 align="center">LQIP: Low Quality Images Placeholder</h4>
 
