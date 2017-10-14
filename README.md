@@ -7,15 +7,18 @@
 #### Demos
 
 - [lqip static site demo](https://lqip-loader.firebaseapp.com/)
-- [Add your demo here]()
+- Your demo goes here! 😻
 
-#### Installation
+<p>
+<img src="https://raw.githubusercontent.com/zouhir/lqip/master/_github/installation.png" width="100%">
+</p>
 
 ```
 npm install --save lqip
 ```
-
-#### Usage Example
+<p>
+<img src="https://raw.githubusercontent.com/zouhir/lqip/master/_github/example.png" width="100%" />
+</p>
 
 Generating Base64 from an image:
 
