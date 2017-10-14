@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/zouhir/lqip#readme",
   "dependencies": {
+    "lodash.sortby": "^4.7.0",
     "node-vibrant": "^3.0.0-alpha.2",
     "sharp": "^0.18.4"
   },

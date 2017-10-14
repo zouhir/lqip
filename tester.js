@@ -20,6 +20,8 @@ const paletteExtractor = swatch => {
   };
 };
 
-lqip(file, { base64: true, colors: true }).then(resolve => {
+console.time("palette");
+lqip.base64(file).then(resolve => {
+  console.timeEnd("palette");
   console.log(resolve);
 });
