@@ -1,6 +1,6 @@
 {
   "name": "lqip",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Low Quality Image Placeholders (LQIP) Module for Node",
   "main": "index.js",
   "scripts": {

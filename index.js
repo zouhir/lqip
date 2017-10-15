@@ -2,7 +2,8 @@ const path = require("path");
 const sharp = require("sharp");
 const { version } = require("./package.json");
 const Vibrant = require("node-vibrant");
-var sortBy = require("lodash.sortby");
+
+const { toPalette, toBase64 } = require('./util');
 
 const ERROR_EXT = `Error: Input file is missing or of an unsupported image format lqip v${version}`;
 
@@ -13,48 +14,6 @@ const SUPPORTED_MIMES = {
   png: "image/png"
 };
 
-/**
- * toBase64
- * @description it returns a Base64 image string with required formatting
- * to work on the web (<img src=".." /> or in CSS url('..'))
- *
- * @param extension: image file extension
- * @param data: base64 string
- * @returns {string}
- */
-const toBase64 = (extension, data) => {
-  return `data:${SUPPORTED_MIMES[extension]};base64,${data.toString("base64")}`;
-};
-
-/**
- * toPalette
- * @description takes a color swatch object, converts it to an array & returns
- * only hex color
- *
- * @param swatch
- * @returns {{palette: Array}}
- */
-const toPalette = swatch => {
-  // get an array with relevant information
-  // out of swatch object
-  let palette = Object.keys(swatch).reduce((result, key) => {
-    if (swatch[key] !== null) {
-      result.push({
-        popularity: swatch[key].getPopulation(),
-        hex: swatch[key].getHex()
-      });
-    }
-    return result;
-  }, []);
-  // sort by least to most popular color
-  // sortBy docs: https://lodash.com/docs/4.17.4#sortBy
-  palette = sortBy(palette, ["popularity"]);
-  // we done with the popularity attribute
-  // remove it with map & reverse the order
-  // so it becomes from most to least popular
-  palette = palette.map(color => color.hex).reverse();
-  return palette;
-};
 
 const base64 = file => {
   return new Promise((resolve, reject) => {
@@ -76,7 +35,7 @@ const base64 = file => {
       .then(data => {
         if (data) {
           // valid image Base64 string, ready to go as src or CSS background
-          return resolve(toBase64(extension, data));
+          return resolve(toBase64(SUPPORTED_MIMES[extension], data));
         }
         return reject(
           new Error("Unhandled promise rejection in base64 promise")

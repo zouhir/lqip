@@ -22,7 +22,6 @@ describe("lqip base64 function", () => {
   });
 });
 
-
 describe("lqip palette function", () => {
     it("should generate a color palette", done => {
         const file = `${__dirname}/img/riding-a-bike.jpg`;
