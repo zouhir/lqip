@@ -58,7 +58,7 @@ lqip.palette(file).then(res => {
 This method accepts an image file path, the file has to be one of those formats ['jpeg', 'jpg', 'png'] and returns a Base64 
 image string with a valid format and ready to be used in web applications such as in <img /> tags source or in CSS properties URLs. 
 
-##### `lqip.base64(filePath: string)`
+##### `lqip.palette(filePath: string)`
 
 This method accepts an image file path, and returns an colour palette as an array of HEX colour values. The array that is returned
 is sorted from the most to the least dominant colour.  
