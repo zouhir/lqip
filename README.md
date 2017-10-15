@@ -86,6 +86,6 @@ is sorted from the most to the least dominant colour.
 
 Related projects to this would be [lqip-loader for webpack](https://github.com/zouhir/lqip-loader) as well as [lqip-cli](https://github.com/zouhir/lqip-cli).
 
-Thanks to [Colin van Eengine](https://twitter.com/cvaneenige) for his reviewing and early testing.
+Thanks to contributors and [Colin van Eenige](https://twitter.com/cvaneenige) for his reviews and early testing.
 
 MIT - [Zouhir Chahoud](https://zouhir.org/)
