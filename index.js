@@ -3,7 +3,7 @@ const sharp = require("sharp");
 const { version } = require("./package.json");
 const Vibrant = require("node-vibrant");
 
-const { toPalette, toBase64 } = require('./util');
+const { toPalette, toBase64 } = require("./util");
 
 const ERROR_EXT = `Error: Input file is missing or of an unsupported image format lqip v${version}`;
 
@@ -13,7 +13,6 @@ const SUPPORTED_MIMES = {
   jpg: "image/jpeg",
   png: "image/png"
 };
-
 
 const base64 = file => {
   return new Promise((resolve, reject) => {
