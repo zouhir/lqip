@@ -47,23 +47,6 @@ const toPalette = swatch => (
   .map(color => color.hex)
 )
 
-const toPalette = swatch => {
-
-  let palette = Object.keys(swatch).map(key => {
-    return {
-      popularity: swatch[key].getPopulation(),
-      hex: swatch[key].getHex()
-    };
-  });
-
-  palette = sortBy(palette, ["popularity"]);
-  // we done with the popularity attribute
-  // remove it with map & reverse the order
-  // so it becomes from most to least popular
-  palette = palette.map(color => color.hex).reverse();
-  return palette
-};
-
 const base64 = file => {
   return new Promise((resolve, reject) => {
     // get the extension of the chosen file
