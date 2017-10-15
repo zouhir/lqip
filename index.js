@@ -37,12 +37,15 @@ const toBase64 = (extension, data) => {
 const toPalette = swatch => {
   // get an array with relevant information
   // out of swatch object
-  let palette = Object.keys(swatch).map(key => {
-    return {
-      popularity: swatch[key].getPopulation(),
-      hex: swatch[key].getHex()
-    };
-  });
+  let palette = Object.keys(swatch).reduce((result, key) => {
+    if (swatch[key] !== null) {
+      result.push({
+        popularity: swatch[key].getPopulation(),
+        hex: swatch[key].getHex()
+      });
+    }
+    return result;
+  }, []);
   // sort by least to most popular color
   // sortBy docs: https://lodash.com/docs/4.17.4#sortBy
   palette = sortBy(palette, ["popularity"]);
@@ -50,7 +53,7 @@ const toPalette = swatch => {
   // remove it with map & reverse the order
   // so it becomes from most to least popular
   palette = palette.map(color => color.hex).reverse();
-  return palette
+  return palette;
 };
 
 const base64 = file => {
