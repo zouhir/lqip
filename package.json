@@ -29,7 +29,7 @@
   "dependencies": {
     "lodash.sortby": "^4.7.0",
     "node-vibrant": "^3.0.0-alpha.2",
-    "sharp": "^0.18.4"
+    "sharp": "^0.20.0"
   },
   "devDependencies": {
     "chai": "^4.0.2",
