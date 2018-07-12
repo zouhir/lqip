@@ -1,5 +1,5 @@
 const path = require("path");
-const sharp = require("sharp");
+const jimp = require("jimp");
 const { version } = require("./package.json");
 const Vibrant = require("node-vibrant");
 
@@ -25,21 +25,24 @@ const base64 = file => {
       return reject(ERROR_EXT);
     }
 
-    // process the image
-    // `sharp` library has been chosen since
-    // it performed better than alternatives.
-    return sharp(file)
-      .resize(14) // resize to 14px width and auto height
-      .toBuffer() // converts to buffer for Base64 conversion
-      .then(data => {
-        if (data) {
-          // valid image Base64 string, ready to go as src or CSS background
-          return resolve(toBase64(SUPPORTED_MIMES[extension], data));
-        }
-        return reject(
-          new Error("Unhandled promise rejection in base64 promise")
-        );
-      })
+    return jimp
+      .read(file)
+      .then(image => image.resize(10, jimp.AUTO))
+      .then(image =>
+        image.getBuffer(SUPPORTED_MIMES[extension], (err, data) => {
+          if (err) {
+            return reject(err);
+          }
+
+          if (data) {
+            // valid image Base64 string, ready to go as src or CSS background
+            return resolve(toBase64(SUPPORTED_MIMES[extension], data));
+          }
+          return reject(
+            new Error('Unhandled promise rejection in base64 promise')
+          );
+        })
+      )
       .catch(err => {
         return reject(err);
       });
