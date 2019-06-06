@@ -40,5 +40,8 @@
   "files": [
     "index.js",
     "util.js"
-  ]
+  ],
+  "engines": {
+    "node": ">=6"
+  }
 }
