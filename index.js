@@ -1,7 +1,15 @@
 const path = require("path");
-const jimp = require("jimp");
 const { version } = require("./package.json");
 const Vibrant = require("node-vibrant");
+const configure = require('@jimp/custom')
+const jpeg = require('@jimp/jpeg')
+const png = require( '@jimp/png')
+const resize = require('@jimp/plugin-resize')
+
+const jimp = configure({
+  types: [jpeg, png],
+  plugins: [resize]
+})
 
 const { toPalette, toBase64 } = require("./util");
 

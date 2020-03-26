@@ -27,9 +27,12 @@
   },
   "homepage": "https://github.com/zouhir/lqip#readme",
   "dependencies": {
-    "jimp": "^0.2.28",
+    "@jimp/custom": "^0.3.7",
+    "@jimp/jpeg": "^0.3.7",
+    "@jimp/plugin-resize": "^0.3.7",
+    "@jimp/png": "^0.3.7",
     "lodash.sortby": "^4.7.0",
-    "node-vibrant": "^3.0.0-alpha.2"
+    "node-vibrant": "^3.1.5"
   },
   "devDependencies": {
     "chai": "^4.0.2",
