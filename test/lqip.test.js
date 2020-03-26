@@ -1,5 +1,4 @@
 const chai = require("chai");
-const mockFiles = require("mock-fs");
 const chaiAsPromised = require("chai-as-promised");
 const lqip = require("../index");
 
@@ -7,7 +6,7 @@ chai.use(chaiAsPromised);
 const expect = chai.expect;
 
 describe("lqip base64 function", () => {
-  it("hould reject uknown or unsupported file formats", done => {
+  it("should reject unkown or unsupported file formats", done => {
     const file = "test/dir/images/earth.mp3";
     let lqipped = lqip.base64(file);
     expect(lqipped).to.be.rejected.and.notify(done);

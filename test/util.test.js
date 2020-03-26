@@ -1,5 +1,4 @@
 const chai = require("chai");
-const mockFiles = require("mock-fs");
 
 const Vibrant = require("node-vibrant");
 
