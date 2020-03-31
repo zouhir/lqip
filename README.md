@@ -1,4 +1,4 @@
-![LQIP: Low Quality Images](https://raw.githubusercontent.com/mole-inc/lqip/master/_github/logo.png)
+![LQIP: Low Quality Images](https://raw.githubusercontent.com/mole-inc/lqip/master/.github/logo.png)
 
 # LQIP: Low Quality Images Placeholder
 
