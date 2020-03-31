@@ -2,7 +2,10 @@
   "name": "@mole-inc/lqip",
   "version": "2.1.0",
   "description": "Low Quality Image Placeholders (LQIP) Module for Node",
-  "main": "index.js",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "mocha",
     "lint": "eslint --ext .js --ignore-path .gitignore .",

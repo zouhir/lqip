@@ -2,7 +2,7 @@ const chai = require("chai");
 
 const Vibrant = require("node-vibrant");
 
-const { toPalette, toBase64 } = require("../util");
+const { toPalette, toBase64 } = require("../src/util");
 
 const expect = chai.expect;
 

@@ -1,5 +1,5 @@
 const path = require("path");
-const { version } = require("./package.json");
+const { version } = require("../package.json");
 const Vibrant = require("node-vibrant");
 const configure = require("@jimp/custom");
 const jpeg = require("@jimp/jpeg");
