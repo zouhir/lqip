@@ -31,7 +31,6 @@
     "@jimp/jpeg": "^0.3.7",
     "@jimp/plugin-resize": "^0.3.7",
     "@jimp/png": "^0.3.7",
-    "lodash.sortby": "^4.7.0",
     "node-vibrant": "^3.1.5"
   },
   "devDependencies": {
