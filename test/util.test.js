@@ -18,13 +18,13 @@ describe("toBae64 utility function", () => {
 describe("toPalette utility function", () => {
   let correctTestSwatch = null;
   let testSwatchWithNull = null;
-  before(done => {
+  before((done) => {
     // we need a valid swatch object first!
     const file = `${__dirname}/img/riding-a-bike.jpg`;
     let vibrant = new Vibrant(file, {
       // no special options for now
     });
-    vibrant.getPalette().then(palette => {
+    vibrant.getPalette().then((palette) => {
       correctTestSwatch = Object.assign({}, palette);
       // setting up a usecase
       testSwatchWithNull = Object.assign({}, palette);

@@ -19,21 +19,24 @@ const toBase64 = (extMimeType, data) => {
  * @param swatch
  * @returns {{palette: Array}}
  */
-const toPalette = swatch => (
+const toPalette = (swatch) => {
   // get an array with relevant information
   // out of swatch object
-  Object.keys(swatch).map(key => ({
-    popularity: swatch[key].getPopulation(),
-    hex: swatch[key].getHex()
-  }))
-  // discard falsy values
-  .filter(Boolean)
-  // sort by least to most popular color
-  .sort((a, b) => a.popularity <= b.popularity)
-  .map(color => color.hex)
-)
+  return (
+    Object.keys(swatch)
+      .map((key) => ({
+        popularity: swatch[key].getPopulation(),
+        hex: swatch[key].getHex(),
+      }))
+      // discard falsy values
+      .filter(Boolean)
+      // sort by least to most popular color
+      .sort((a, b) => a.popularity <= b.popularity)
+      .map((color) => color.hex)
+  );
+};
 
 module.exports = {
   toBase64,
-  toPalette
+  toPalette,
 };

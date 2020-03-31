@@ -4,7 +4,10 @@
   "description": "Low Quality Image Placeholders (LQIP) Module for Node",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ext .js --ignore-path .gitignore .",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -34,8 +37,15 @@
     "node-vibrant": "^3.1.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "chai": "^4.0.2",
     "chai-as-promised": "^7.1.1",
-    "mocha": "^7.1.1"
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "mocha": "^7.1.1",
+    "prettier": "^2.0.2",
+    "standard-version": "^7.1.0"
   }
 }

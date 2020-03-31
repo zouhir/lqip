@@ -1,15 +1,15 @@
 const path = require("path");
 const { version } = require("./package.json");
 const Vibrant = require("node-vibrant");
-const configure = require('@jimp/custom')
-const jpeg = require('@jimp/jpeg')
-const png = require( '@jimp/png')
-const resize = require('@jimp/plugin-resize')
+const configure = require("@jimp/custom");
+const jpeg = require("@jimp/jpeg");
+const png = require("@jimp/png");
+const resize = require("@jimp/plugin-resize");
 
 const jimp = configure({
   types: [jpeg, png],
-  plugins: [resize]
-})
+  plugins: [resize],
+});
 
 const { toPalette, toBase64 } = require("./util");
 
@@ -19,10 +19,10 @@ const ERROR_EXT = `Error: Input file is missing or of an unsupported image forma
 const SUPPORTED_MIMES = {
   jpeg: "image/jpeg",
   jpg: "image/jpeg",
-  png: "image/png"
+  png: "image/png",
 };
 
-const base64 = file => {
+const base64 = (file) => {
   return new Promise((resolve, reject) => {
     // get the extension of the chosen file
     let extension = path.extname(file) || "";
@@ -35,8 +35,8 @@ const base64 = file => {
 
     return jimp
       .read(file)
-      .then(image => image.resize(10, jimp.AUTO))
-      .then(image =>
+      .then((image) => image.resize(10, jimp.AUTO))
+      .then((image) =>
         image.getBuffer(SUPPORTED_MIMES[extension], (err, data) => {
           if (err) {
             return reject(err);
@@ -47,17 +47,17 @@ const base64 = file => {
             return resolve(toBase64(SUPPORTED_MIMES[extension], data));
           }
           return reject(
-            new Error('Unhandled promise rejection in base64 promise')
+            new Error("Unhandled promise rejection in base64 promise")
           );
         })
       )
-      .catch(err => {
+      .catch((err) => {
         return reject(err);
       });
   });
 };
 
-const palette = file => {
+const palette = (file) => {
   return new Promise((resolve, reject) => {
     // vibrant library was about 10-15% slower than
     // get-image-colors npm module but provided better
@@ -67,7 +67,7 @@ const palette = file => {
     });
     vibrant
       .getPalette()
-      .then(palette => {
+      .then((palette) => {
         if (palette) {
           return resolve(toPalette(palette));
         }
@@ -75,16 +75,16 @@ const palette = file => {
           new Error("Unhandled promise rejection in colorPalette", palette)
         );
       })
-      .catch(err => {
+      .catch((err) => {
         return reject(err);
       });
   });
 };
-process.on("unhandledRejection", up => {
+process.on("unhandledRejection", (up) => {
   throw up;
 });
 
 module.exports = {
   base64,
-  palette
+  palette,
 };
