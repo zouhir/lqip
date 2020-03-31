@@ -1,6 +1,6 @@
 {
   "name": "@mole-inc/lqip",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Low Quality Image Placeholders (LQIP) Module for Node",
   "main": "src/index.js",
   "files": [
@@ -47,5 +47,8 @@
     "mocha": "^7.1.1",
     "prettier": "^2.0.2",
     "standard-version": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=10.13.0"
   }
 }
