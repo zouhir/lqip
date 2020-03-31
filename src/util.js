@@ -24,12 +24,12 @@ const toPalette = (swatch) => {
   // out of swatch object
   return (
     Object.keys(swatch)
+      // discard falsy values
+      .filter((key) => !!swatch[key])
       .map((key) => ({
         popularity: swatch[key].getPopulation(),
         hex: swatch[key].getHex(),
       }))
-      // discard falsy values
-      .filter(Boolean)
       // sort by least to most popular color
       .sort((a, b) => a.popularity <= b.popularity)
       .map((color) => color.hex)
