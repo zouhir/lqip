@@ -1,5 +1,5 @@
 {
-  "name": "lqip",
+  "name": "@mole-inc/lqip",
   "version": "2.1.0",
   "description": "Low Quality Image Placeholders (LQIP) Module for Node",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zouhir/lqip.git"
+    "url": "git+https://github.com/mole-inc/lqip.git"
   },
   "keywords": [
     "lqip",
@@ -23,9 +23,9 @@
   "author": "Zouhir Chahoud",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zouhir/lqip/issues"
+    "url": "https://github.com/mole-inc/lqip/issues"
   },
-  "homepage": "https://github.com/zouhir/lqip#readme",
+  "homepage": "https://github.com/mole-inc/lqip#readme",
   "dependencies": {
     "@jimp/custom": "^0.3.7",
     "@jimp/jpeg": "^0.3.7",
