@@ -7,8 +7,12 @@
   <a align="center" href="https://lqip-loader.firebaseapp.com/">demo</a>
 </p>
 
-<br />
-<br />
+# Project Status
+
+Note: this is a fork from the [original `lqip` repo](https://github.com/zouhir/lqip-loader) which is no longer actively maintained.
+
+---
+
 <p>
   <img src="https://raw.githubusercontent.com/zouhir/lqip/master/_github/installation.png" width="100%">
 </p>
@@ -25,29 +29,28 @@ npm install --save lqip
 Generating Base64 from an image:
 
 ```js
-const lqip = require('lqip');
+const lqip = require("lqip");
 
 const file = `./dest/to/file/zouhir-riding-a-bike.jpg`;
 
-lqip.base64(file).then(res => {
+lqip.base64(file).then((res) => {
   console.log(res); // "data:image/jpeg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhY.....
 });
-
 ```
 
 Generating colour palette from an image:
 
 ```js
-const lqip = require('lqip');
+const lqip = require("lqip");
 
 const file = `./dest/to/file/zouhir-riding-a-bike.jpg`;
 
-lqip.palette(file).then(res => {
+lqip.palette(file).then((res) => {
   // the response will be sorted from most dominant colour to least
-  console.log(res); //  [ '#628792', '#bed4d5', '#5d4340', '#ba454d', '#c5dce4', '#551f24' ] 
+  console.log(res); //  [ '#628792', '#bed4d5', '#5d4340', '#ba454d', '#c5dce4', '#551f24' ]
 });
-
 ```
+
 <br />
 <p>
   <img src="https://raw.githubusercontent.com/zouhir/lqip/master/_github/api.png" width="100%" />
@@ -55,13 +58,13 @@ lqip.palette(file).then(res => {
 
 ##### `lqip.base64(filePath: string)`
 
-This method accepts an image file path, the file has to be one of those formats ['jpeg', 'jpg', 'png'] and returns a Base64 
-image string with a valid format and ready to be used in web applications such as in <img /> tags source or in CSS properties URLs. 
+This method accepts an image file path, the file has to be one of those formats ['jpeg', 'jpg', 'png'] and returns a Base64
+image string with a valid format and ready to be used in web applications such as in <img /> tags source or in CSS properties URLs.
 
 ##### `lqip.palette(filePath: string)`
 
 This method accepts an image file path, and returns an colour palette as an array of HEX colour values. The array that is returned
-is sorted from the most to the least dominant colour.  
+is sorted from the most to the least dominant colour.
 
 <br />
 <p>
