@@ -77,7 +77,7 @@ is sorted from the most to the least dominant colour.
   <img src="https://github.com/zouhir/lqip/blob/master/_github/mentions.png" width="100%" />
 </p>
 
-- Essential Image Optimization, An eBook by Addy Osmany [link](https://images.guide/)
+- Essential Image Optimization, An eBook by Addy Osmani [link](https://images.guide/)
 
 <br />
 <p>
